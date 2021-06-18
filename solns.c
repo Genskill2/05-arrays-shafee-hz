@@ -51,3 +51,31 @@ int main(void){
  printf("Minimum is %i\n", minimum);
 } 
 
+/* Question 3 */
+#include <stdio.h>
+#include <cs50.h>
+
+float compute_average(int len,int marks[]){
+          float sum =0;
+          for (int i=0; i<len; i++){
+             sum = sum + marks[i];
+          }    
+       return sum/len;     }
+int main(void){
+     int N;
+     N = get_int("Number of subjects");
+     string names[N];
+     int marks[N];
+     for (int i=0; i<N; i++){
+      names[i] = get_string("Enter subject %i",i+1);
+       marks[i] = get_int("Enter marks for %s",names[i]);
+    }
+   float average = compute_average(N, marks);
+     for (int i=0; i<N; i++){
+        printf("%s : %i\n", names[i], marks[i]);
+     }
+    printf("Average is %f\n", average); 
+}
+   
+   
+
